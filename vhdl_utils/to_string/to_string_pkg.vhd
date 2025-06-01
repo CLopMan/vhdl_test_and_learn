@@ -12,6 +12,8 @@ package toStringPKG is
     function to_string( usig : unsigned ) return string;
     function to_hex( slv : std_ulogic_vector ) return string;
     function to_hex( slv : std_logic_vector ) return string;
+    function to_hex( sig : signed ) return string;
+    function to_hex( usig : unsigned ) return string;
 
 end package;
 
@@ -70,6 +72,16 @@ package body toStringPKG is
     function to_hex (slv : std_logic_vector ) return string is
     begin
         return to_hex(std_ulogic_vector(slv));
+    end function;
+
+    function to_hex (sig : signed ) return string is
+    begin
+        return to_hex(std_ulogic_vector(sig));
+    end function;
+
+    function to_hex (usig : unsigned ) return string is
+    begin
+        return to_hex(std_ulogic_vector(usig));
     end function;
 
     function to_string(slv: std_ulogic_vector) return string is
