@@ -72,7 +72,6 @@ begin
             elsif run("to_unsigned_hex_ascending") then
                 assert "013A" = to_hex(unsigned_value_asc);
             elsif run("to_unsigned_hex_descending") then
-                report to_hex(unsigned_value_desc);
                 assert "013A" = to_hex(unsigned_value_desc) report to_hex(unsigned_value_desc);
             end if;
         end loop;
